@@ -231,7 +231,11 @@ function openModal(alimento) {
         <strong>Proteínas (%):</strong> ${alimento.getprcntProteinas()}<br>
         <strong>Grasas (%):</strong> ${alimento.getprcntGrasas()}<br>
         <img src="./img/${alimento.nombre}.png" alt="${alimento.nombre}">
-        <label for="gramosInput">Ingrese la cantidad en gramos:</label>
+        <br>
+        <br>
+        <label for="gramosInput" style="margin-top:2px;">Ingrese la cantidad en gramos:</label>
+        <br>
+        <br>
         <input type="number" id="gramosInput" placeholder="100gr por defecto...">
         <span class="add" id="addButton">&plus;</span>
     `;

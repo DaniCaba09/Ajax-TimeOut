@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <!-- Incluir la última versión de SVG.js mediante CDN -->
     <script src="https://cdn.jsdelivr.net/npm/svg.js/dist/svg.min.js"></script>
 </head>
+
 <body>
-    <h1><a href="" id="enlace-titulo">&larr;</a>&nbsp;Meal Planner<span class="by">&nbsp;ControlZ</span></h1>
+    <h1><a href="" id="enlace-titulo"></a>&nbsp;Meal Planner</h1>
     <div id="cont-background">
         <!-- Contenedor para los resultados de los cálculos -->
         <div id="calculosContainer" class="calculosContainer">
@@ -21,37 +23,41 @@
                             <stop id="gradient2" offset="100%" style="stop-color:#00f2ff;stop-opacity:1" />
                         </linearGradient>
                     </defs>
-                    <circle class="progress-ring__circle" cx="60" cy="60" r="54" />
+                    
+                    <circle class="progress-ring__circle" cx="60" cy="60" r="54">
+                        <div id="kcal">
+                    </circle>
+
                 </svg>
-                    <div id="kcal">                
-                </div>
-            </div>
-            <div id="hid">
-                <div class="progress-bar">
-                    <div id="hid-progress" class="progress-value"></div>
-                </div>            
-            </div>
-            <div id="prot">
-                <div class="progress-bar">
-                    <div id="prot-progress" class="progress-value"></div>
-                </div>
-            </div>
-            <div id="gra">
-                <div class="progress-bar">
-                    <div id="gra-progress" class="progress-value"></div>
-                </div>
+
             </div>
         </div>
+        <div id="hid">
+            <div class="progress-bar">
+                <div id="hid-progress" class="progress-value"></div>
+            </div>
+        </div>
+        <div id="prot">
+            <div class="progress-bar">
+                <div id="prot-progress" class="progress-value"></div>
+            </div>
+        </div>
+        <div id="gra">
+            <div class="progress-bar">
+                <div id="gra-progress" class="progress-value"></div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <div id="cestamsg" class="cestamsg">
         <h3>Selecciona tus alimentos y añádelos a tus distintas comidas del día:</h3>
-<!-- Contenedor para los alimentos añadidos -->
+        <!-- Contenedor para los alimentos añadidos -->
         <div id="cesta" class="cesta"></div>
         <!-- Contenedor para mensaje -->
-        <div id="mensajeV" class="mensajeV">Deberías considerar consumir más frutas y verduras.</div> 
-    </div>    
-    
+        <div id="mensajeV" class="mensajeV">Deberías considerar consumir más frutas y verduras.</div>
+    </div>
+
     <div id="comidas" class="comidas">
         <div class="menBtn">
             <h2>Desayuno</h2>
@@ -99,7 +105,8 @@
         </div>
         <a href="#calculosContainer" id="scrollTopBtn">&uarr;</a>
     </div>
-    
+
     <script defer src="dieta.js"></script>
 </body>
+
 </html>

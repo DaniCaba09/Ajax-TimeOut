@@ -165,7 +165,17 @@ h3{
     stroke: #3498db; /* color del anillo de progreso */
     stroke-width: 14; /* grosor del anillo de progreso */
     stroke-linecap: round;
-    
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  #kcal{
+    position: absolute;
+    margin-top: -60%;
+    margin-left: 20%;
+    z-index: 1;
   }
   
   .progress-text {
