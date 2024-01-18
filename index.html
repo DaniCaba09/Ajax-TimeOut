@@ -18,27 +18,33 @@
             color: aliceblue;
         }
 
+        @font-face {
+            font-family: 'Laser';
+            src: url('fonts/LASER4.TTF') format('truetype'),
+        }
+
         #titulo {
-            font-size: 80px;
-            font-family: 'Bungee Spice', sans-serif;
-            font-family: 'Rubik Dirt', system-ui;
+            font-size: 65px;
             margin-top: 10%;
             color: rgb(223, 240, 159);
+            font-family: Laser;
         }
 
         button {
-            transform: scale(2);
+            transform: scale(1.7);
+            font-family: Laser;
             margin-top: 10%;
             border: 1px solid;
-            border-color:  rgb(223, 240, 159);
+            border-color: rgb(223, 240, 159);
             border-radius: 5px;
             background-color: transparent;
         }
-        button:hover{
-            background-color:  rgb(223, 240, 159);
+
+        button:hover {
+            background-color: rgb(223, 240, 159);
             border: 1px solid;
-            border-color:  rgb(93, 115, 16);
-            color:  rgb(44, 55, 7);
+            border-color: rgb(93, 115, 16);
+            color: rgb(44, 55, 7);
         }
 
         #contenedor {
@@ -76,17 +82,17 @@
             var informacion = document.getElementById("informacion");
 
             boton.addEventListener("click", function () {
-                
-                boton.textContent="Cargando...";
+
+                boton.textContent = "Cargando...";
                 mensaje.style.display = "block";
                 informacion.style.display = "none";
 
-                
+
                 setTimeout(function redirigir() {
-                    
+
                     mensaje.style.display = "none";
                     window.location.href = "dieta.html";
-                }, 2000); 
+                }, 2000);
             });
         });
 
