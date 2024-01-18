@@ -1,0 +1,271 @@
+@font-face {
+    font-family: 'Laser';
+    src: url('fonts/LASER4.TTF') format('truetype'),
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+h2{
+    font-family: Laser;
+}
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#scrollTopBtn:hover {
+    background-color: #0056b3;
+}
+
+.calculosContainer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-evenly;
+    border: solid rgb(225, 223, 223) 1px ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px;
+    width: 40%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  } 
+
+/* Estilos específicos para pantallas más pequeñas */
+@media only screen and (max-width: 600px) {
+    .calculosContainer {
+        /*flex-direction: column; /* Cambia a una disposición vertical en pantallas más pequeñas */
+        width: 60%; /* Ocupa el ancho completo del contenedor principal en pantallas más pequeñas */
+    }
+}
+
+
+.alimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Mejora la distribución de los divs en el contenedor */
+    background-color: rgba(237, 232, 232, 0.299);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.alimentos-container .alimento {
+    transition: all 1s;
+    display: flex; /* Hace que los elementos dentro del div sean flexibles */
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    width: 300px; /* Ajusta el ancho del div según tus necesidades */
+    text-align: left;
+    border-radius: 10px; /* Bordes curvos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el div */
+}
+
+.alimentos-container .alimento:hover {
+    transform: scale(1.2);
+    border: 2px solid rgb(24, 22, 22);
+
+}
+
+.alimentos-container .alimento img {
+    max-width: 100px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto;
+    margin-left: 30%;
+    border-radius: 5px; /* Bordes curvos para la imagen */
+   
+}
+
+/* Estilos para el modal */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 20%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add{
+    color: green;
+    font-size:38px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: lightgreen;
+    border: solid green; 
+    margin-left: 85%;
+}
+
+.add:hover{
+   color: darkgreen; 
+   background-color: green;
+}
+
+#modalContent b{
+    font-size: 40px;
+}
+
+.progress-container {
+    position: relative;
+  }
+  
+  .progress-ring__circle {
+    fill: none;
+    stroke: #3498db; /* color del anillo de progreso */
+    stroke-width: 14; /* grosor del anillo de progreso */
+    stroke-linecap: round;
+    
+  }
+  
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+  }
+
+.cesta{
+    border: solid rgb(214, 213, 213) 2px;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px; /* Bordes curvos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 5%;
+}
+
+#hid-progress{
+    border: solid rgb(247, 2, 2) 2px;
+    background-color: red;
+    width: 30%;
+    height: 5px;
+}
+
+#prot-progress{
+    border: solid blue 2px;
+    background-color: blue;
+    width: 30%;
+    height: 5px;
+
+}
+
+#gra-progress{
+    border: solid green 2px;
+    background-color: green;
+    width: 30%;
+    height: 5px;
+
+
+}
+
+.comidas{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+    width: 100%;
+    background-color: #f7f6f6;
+}
+
+.cestamenu{ 
+    border: solid rgb(255, 255, 255) 1px;
+    padding: 5%;
+    border-radius: 10px; /* Bordes curvos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%;
+    background-color: white;
+}
+
+.menBtn{
+    width: 20%;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+}
+.cestamsg{
+    width: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.botonAddM{
+    background-color: #fefefe;
+    border-radius: 15px;
+    border: solid rgb(216, 212, 212);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el div */
+    transition: all 1s;
+    margin-bottom: 5%;
+    font-size: 28px;
+    color: #515151;
+
+}
+
+.botonAddM:hover{
+    transform: scale(1.2);
+    color: rgb(0, 106, 255);
+}
+
+#ordenarMenu {
+    float: left;
+    margin-right: auto; /* Empuja #ordenarMenu a la izquierda */
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+#mensajeV{
+    color: rgb(255, 145, 0);
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

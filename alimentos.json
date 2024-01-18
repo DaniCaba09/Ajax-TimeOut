@@ -1,0 +1,466 @@
+[
+  {
+    "nombre": "Manzana",
+    "tipo": "Fruta",
+    "calorias": 52,
+    "hidratos": 14,
+    "proteinas": 0.3,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Pollo",
+    "tipo": "Carne",
+    "calorias": 165,
+    "hidratos": 0,
+    "proteinas": 31,
+    "grasas": 3.6
+  },
+  {
+    "nombre": "Arroz",
+    "tipo": "Cereal",
+    "calorias": 130,
+    "hidratos": 28,
+    "proteinas": 2.7,
+    "grasas": 0.3
+  },
+  {
+    "nombre": "Leche",
+    "tipo": "Lácteo",
+    "calorias": 42,
+    "hidratos": 5,
+    "proteinas": 3.4,
+    "grasas": 1
+  },
+  {
+    "nombre": "Espinaca",
+    "tipo": "Vegetal",
+    "calorias": 23,
+    "hidratos": 3.6,
+    "proteinas": 2.9,
+    "grasas": 0.4
+  },
+  {
+    "nombre": "Yogur",
+    "tipo": "Lácteo",
+    "calorias": 61,
+    "hidratos": 4.7,
+    "proteinas": 10,
+    "grasas": 0.4
+  },
+  {
+    "nombre": "Aguacate",
+    "tipo": "Fruta",
+    "calorias": 160,
+    "hidratos": 8.5,
+    "proteinas": 2,
+    "grasas": 14.7
+  },
+  {
+    "nombre": "Huevo",
+    "tipo": "Proteína",
+    "calorias": 68,
+    "hidratos": 0.6,
+    "proteinas": 5.5,
+    "grasas": 4.8
+  },
+  {
+    "nombre": "Pan Integral",
+    "tipo": "Cereal",
+    "calorias": 69,
+    "hidratos": 11.5,
+    "proteinas": 2.7,
+    "grasas": 1
+  },
+  {
+    "nombre": "Atún",
+    "tipo": "Pescado",
+    "calorias": 89,
+    "hidratos": 0,
+    "proteinas": 20,
+    "grasas": 1
+  },
+  {
+    "nombre": "Plátano",
+    "tipo": "Fruta",
+    "calorias": 105,
+    "hidratos": 27,
+    "proteinas": 1.3,
+    "grasas": 0.4
+  },
+  {
+    "nombre": "Ternera",
+    "tipo": "Carne",
+    "calorias": 250,
+    "hidratos": 0,
+    "proteinas": 26,
+    "grasas": 17
+  },
+  {
+    "nombre": "Quinoa",
+    "tipo": "Cereal",
+    "calorias": 120,
+    "hidratos": 21,
+    "proteinas": 4,
+    "grasas": 1.9
+  },
+  {
+    "nombre": "Queso",
+    "tipo": "Lácteo",
+    "calorias": 110,
+    "hidratos": 1.5,
+    "proteinas": 7,
+    "grasas": 9
+  },
+  {
+    "nombre": "Brócoli",
+    "tipo": "Vegetal",
+    "calorias": 55,
+    "hidratos": 11,
+    "proteinas": 3.7,
+    "grasas": 0.6
+  },
+  {
+    "nombre": "Nuez",
+    "tipo": "Fruto Seco",
+    "calorias": 185,
+    "hidratos": 3.9,
+    "proteinas": 4,
+    "grasas": 18
+  },
+  {
+    "nombre": "Mango",
+    "tipo": "Fruta",
+    "calorias": 60,
+    "hidratos": 15,
+    "proteinas": 0.8,
+    "grasas": 0.4
+  },
+  {
+    "nombre": "Salmón",
+    "tipo": "Pescado",
+    "calorias": 206,
+    "hidratos": 0,
+    "proteinas": 22,
+    "grasas": 13
+  },
+  {
+    "nombre": "Avena",
+    "tipo": "Cereal",
+    "calorias": 68,
+    "hidratos": 12,
+    "proteinas": 2.5,
+    "grasas": 1.4
+  },
+  {
+    "nombre": "Aceituna",
+    "tipo": "Fruto Seco",
+    "calorias": 115,
+    "hidratos": 6.3,
+    "proteinas": 0.8,
+    "grasas": 10.7
+  },
+  {
+    "nombre": "Sandía",
+    "tipo": "Fruta",
+    "calorias": 30,
+    "hidratos": 8,
+    "proteinas": 0.6,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Pavo",
+    "tipo": "Carne",
+    "calorias": 135,
+    "hidratos": 0,
+    "proteinas": 30,
+    "grasas": 2
+  },
+  {
+    "nombre": "Couscous",
+    "tipo": "Cereal",
+    "calorias": 176,
+    "hidratos": 36,
+    "proteinas": 6,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Yogur Griego",
+    "tipo": "Lácteo",
+    "calorias": 100,
+    "hidratos": 4,
+    "proteinas": 10,
+    "grasas": 2
+  },
+  {
+    "nombre": "Zanahoria",
+    "tipo": "Vegetal",
+    "calorias": 41,
+    "hidratos": 10,
+    "proteinas": 1,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Almendra",
+    "tipo": "Fruto Seco",
+    "calorias": 579,
+    "hidratos": 21,
+    "proteinas": 21,
+    "grasas": 49
+  },
+  {
+    "nombre": "Papaya",
+    "tipo": "Fruta",
+    "calorias": 43,
+    "hidratos": 11,
+    "proteinas": 0.5,
+    "grasas": 0.3
+  },
+  {
+    "nombre": "Trucha",
+    "tipo": "Pescado",
+    "calorias": 109,
+    "hidratos": 0,
+    "proteinas": 23,
+    "grasas": 2
+  },
+  {
+    "nombre": "Queso Cottage",
+    "tipo": "Lácteo",
+    "calorias": 98,
+    "hidratos": 3,
+    "proteinas": 11,
+    "grasas": 5
+  },
+  {
+    "nombre": "Kiwi",
+    "tipo": "Fruta",
+    "calorias": 61,
+    "hidratos": 15,
+    "proteinas": 1.1,
+    "grasas": 0.5
+  },
+  {
+    "nombre": "Fresas",
+    "tipo": "Fruta",
+    "calorias": 32,
+    "hidratos": 8,
+    "proteinas": 0.7,
+    "grasas": 0.3
+  },
+  {
+    "nombre": "Cerdo",
+    "tipo": "Carne",
+    "calorias": 143,
+    "hidratos": 0,
+    "proteinas": 26,
+    "grasas": 4
+  },
+  {
+    "nombre": "Cebada",
+    "tipo": "Cereal",
+    "calorias": 354,
+    "hidratos": 73,
+    "proteinas": 12,
+    "grasas": 2.3
+  },
+  {
+    "nombre": "Mantequilla",
+    "tipo": "Lácteo",
+    "calorias": 717,
+    "hidratos": 0.1,
+    "proteinas": 0.1,
+    "grasas": 81
+  },
+  {
+    "nombre": "Avellanas",
+    "tipo": "Fruto Seco",
+    "calorias": 628,
+    "hidratos": 16,
+    "proteinas": 15,
+    "grasas": 61
+  },
+  {
+    "nombre": "Piña",
+    "tipo": "Fruta",
+    "calorias": 50,
+    "hidratos": 13,
+    "proteinas": 0.5,
+    "grasas": 0.1
+  },
+  {
+    "nombre": "Merluza",
+    "tipo": "Pescado",
+    "calorias": 88,
+    "hidratos": 0,
+    "proteinas": 18,
+    "grasas": 1.4
+  },
+  {
+    "nombre": "Yogur de Soja",
+    "tipo": "Lácteo Alternativo",
+    "calorias": 33,
+    "hidratos": 3.9,
+    "proteinas": 3.3,
+    "grasas": 0.9
+  },
+  {
+    "nombre": "Acelga",
+    "tipo": "Vegetal",
+    "calorias": 19,
+    "hidratos": 3.7,
+    "proteinas": 1.6,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Tofu",
+    "tipo": "Proteína Vegetal",
+    "calorias": 144,
+    "hidratos": 3.9,
+    "proteinas": 15,
+    "grasas": 8
+  },
+  {
+    "nombre": "Queso Azul",
+    "tipo": "Lácteo",
+    "calorias": 353,
+    "hidratos": 2,
+    "proteinas": 21,
+    "grasas": 29
+  },
+  {
+    "nombre": "Pistachos",
+    "tipo": "Fruto Seco",
+    "calorias": 562,
+    "hidratos": 27,
+    "proteinas": 20,
+    "grasas": 45
+  },
+  {
+    "nombre": "Batata",
+    "tipo": "Vegetal",
+    "calorias": 86,
+    "hidratos": 20,
+    "proteinas": 1.6,
+    "grasas": 0.1
+  }, 
+  {
+    "nombre": "Garbanzos",
+    "tipo": "Legumbre",
+    "calorias": 164,
+    "hidratos": 27,
+    "proteinas": 8.9,
+    "grasas": 2.6
+  },
+  {
+    "nombre": "Hummus",
+    "tipo": "Aperitivo",
+    "calorias": 166,
+    "hidratos": 14,
+    "proteinas": 8,
+    "grasas": 9.6
+  },
+  {
+    "nombre": "Gambas",
+    "tipo": "Marisco",
+    "calorias": 99,
+    "hidratos": 0.2,
+    "proteinas": 20,
+    "grasas": 1.5
+  },
+  {
+    "nombre": "Col Rizada",
+    "tipo": "Vegetal",
+    "calorias": 49,
+    "hidratos": 11,
+    "proteinas": 2.9,
+    "grasas": 0.4
+  },
+  {
+    "nombre": "Alubias Negras",
+    "tipo": "Legumbre",
+    "calorias": 341,
+    "hidratos": 63,
+    "proteinas": 21,
+    "grasas": 1.4
+  },
+  {
+    "nombre": "Granada",
+    "tipo": "Fruta",
+    "calorias": 83,
+    "hidratos": 19,
+    "proteinas": 1.7,
+    "grasas": 1.2
+  },
+  {
+    "nombre": "Calabacín",
+    "tipo": "Vegetal",
+    "calorias": 17,
+    "hidratos": 3.1,
+    "proteinas": 1.2,
+    "grasas": 0.3
+  },
+  {
+    "nombre": "Cangrejo",
+    "tipo": "Marisco",
+    "calorias": 90,
+    "hidratos": 0,
+    "proteinas": 18,
+    "grasas": 1.2
+  },
+  {
+    "nombre": "Escarola",
+    "tipo": "Vegetal",
+    "calorias": 19,
+    "hidratos": 3.3,
+    "proteinas": 1.5,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Patata Dulce",
+    "tipo": "Tubérculo",
+    "calorias": 112,
+    "hidratos": 26,
+    "proteinas": 1.6,
+    "grasas": 0.1
+  },
+  {
+    "nombre": "Chirimoya",
+    "tipo": "Fruta",
+    "calorias": 90,
+    "hidratos": 22,
+    "proteinas": 2.1,
+    "grasas": 1.5
+  },
+  {
+    "nombre": "Judías Verdes",
+    "tipo": "Vegetal",
+    "calorias": 31,
+    "hidratos": 7,
+    "proteinas": 2,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Langosta",
+    "tipo": "Marisco",
+    "calorias": 98,
+    "hidratos": 0,
+    "proteinas": 21,
+    "grasas": 0.5
+  },
+  {
+    "nombre": "Endibia",
+    "tipo": "Vegetal",
+    "calorias": 17,
+    "hidratos": 3.4,
+    "proteinas": 1.3,
+    "grasas": 0.2
+  },
+  {
+    "nombre": "Yuca",
+    "tipo": "Tubérculo",
+    "calorias": 330,
+    "hidratos": 78,
+    "proteinas": 2,
+    "grasas": 0.9
+  }
+]

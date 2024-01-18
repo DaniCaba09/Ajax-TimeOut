@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Alimentos</title>
+    <link rel="stylesheet" href="dieta.css">
+    <!-- Incluir la última versión de SVG.js mediante CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/svg.js/dist/svg.min.js"></script>
+</head>
+<body>
+    <!-- Contenedor para los resultados de los cálculos -->
+    <div id="calculosContainer" class="calculosContainer">
+        <div class="progress-container">
+            <svg class="progress-ring" width="120" height="120">
+            <circle class="progress-ring__circle" cx="60" cy="60" r="54" />
+            </svg>
+            <div id="kcal">
+            
+            </div>
+        </div>
+        <div id="hid">
+            <div class="progress-bar">
+                <div id="hid-progress" class="progress-value"></div>
+            </div>            
+        </div>
+        <div id="prot">
+            <div class="progress-bar">
+                <div id="prot-progress" class="progress-value"></div>
+            </div>
+        </div>
+        <div id="gra">
+            <div class="progress-bar">
+                <div id="gra-progress" class="progress-value"></div>
+            </div>
+        </div>
+
+    </div>
+    <div id="cestamsg" class="cestamsg">
+        <h3>Selecciona tus alimentos y añádelos a tus distintas comidas del día:</h3>
+<!-- Contenedor para los alimentos añadidos -->
+        <div id="cesta" class="cesta"></div>
+        <!-- Contenedor para mensaje -->
+        <div id="mensajeV" class="mensajeV">Deberías considerar consumir más frutas y verduras.</div> 
+    </div>    
+    
+    <div id="comidas" class="comidas">
+        <div class="menBtn">
+            <h2>Desayuno</h2>
+            <button class="botonAddM" onclick="addMenu('desayuno')">&plus;</button>
+            <div id="desayuno" class="cestamenu"></div>
+
+        </div>
+        <div class="menBtn">
+            <h2>Almuerzo</h2>
+            <button class="botonAddM" onclick="addMenu('almuerzo')">&plus;</button>
+            <div id="almuerzo" class="cestamenu"></div>
+
+        </div>
+        <div class="menBtn">
+            <h2>Snack</h2>
+            <button class="botonAddM" onclick="addMenu('snack')">&plus;</button>
+            <div id="snack" class="cestamenu"></div>
+
+        </div>
+        <div class="menBtn">
+            <h2>Cena</h2>
+            <button class="botonAddM" onclick="addMenu('cena')">&plus;</button>
+            <div id="cena" class="cestamenu"></div>
+
+        </div>
+    </div>
+    <div id="ordenarMenu" class="ordenar-menu">
+        <label for="ordenarSelect">Ordenar por:</label>
+        <select id="ordenarSelect" onchange="ordenarAlimentos()">
+            <option value="calorias">Calorías</option>
+            <option value="alfabeto">Alfabético</option>
+            <option value="caloriasdecreciente">Calorías, Decreciente</option>
+        </select>
+    </div>
+    <!-- Contenedor para los alimentos -->
+    <div id="alimentosContainer" class="alimentos-container">
+        <!-- Divs independientes para cada alimento -->
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+        <a href="#calculosContainer" id="scrollTopBtn">&uarr;</a>
+    </div>
+    
+    <script defer src="dieta.js"></script>
+</body>
+</html>
