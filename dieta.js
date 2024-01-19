@@ -1,19 +1,19 @@
 
 let alimentos = {}; //objeto que contiene los alimentos leídos por xmlhttprequest o fetch
 
-let contVegetal=0; /*contador y mensaje para informar de que cada comida ha de tener un vegetal*/
+let contVegetal = 0; /*contador y mensaje para informar de que cada comida ha de tener un vegetal*/
 const mensaje = document.getElementById('mensajeV');
 
-let  alimentosAñadidos = []; 
+let alimentosAñadidos = [];
 const MAX_CALORIAS = 2000; // ahora es constante después se pide a usuario
 
-const alimentosContainer = document.getElementById('alimentosContainer'); 
-
+const alimentosContainer = document.getElementById('alimentosContainer');
+let msjgoto = document.getElementById('cestamsg');
 /*TOTALES*/
 let totalCalorias = 0,
-totalHidratos = 0,
-totalProteinas = 0,
-totalGrasas = 0;
+    totalHidratos = 0,
+    totalProteinas = 0,
+    totalGrasas = 0;
 
 class Alimento {
     constructor(nombre, tipo, calorias, hidratos, proteinas, grasas) {
@@ -98,30 +98,34 @@ class Alimento {
         return (this._proteinas / this.getTotalMacro() * 100).toFixed(2);
     }
 
-   /**Método para añadir alimento y mostrar totales
-     * 
-     * @param {Alimento} alimento - El alimento a añadir
-     */
+    /**Método para añadir alimento y mostrar totales
+      * 
+      * @param {Alimento} alimento - El alimento a añadir
+      */
     addAlimento(cantidadGramos) {
         // Verificar si añadir el nuevo alimento supera la cantidad máxima de calorías
         if (totalCalorias + (this.calorias * cantidadGramos / 100) <= MAX_CALORIAS) {
             this.cantidadGramos = cantidadGramos;  // Asignar la cantidad de gramos al objeto Alimento
- 
+
             alimentosAñadidos.push(this);
             totalCalorias += (this.calorias * cantidadGramos / 100);
             totalHidratos += (this.hidratos * cantidadGramos / 100);
             totalProteinas += (this.proteinas * cantidadGramos / 100);
             totalGrasas += (this.grasas * cantidadGramos / 100);
-    
+
             if (this.tipo === 'Vegetal' || this.tipo === 'Fruta') contVegetal++;
-    
+
             // Ocultar el mensaje si se supera el límite de alimentos vegetales
             if (contVegetal > 0) {
                 mensaje.style.display = 'none';
             }
-    
+
             actualizarTotales();
             actualizarCesta();
+
+            closeModal();
+            msjgoto.scrollIntoView();
+            
         } else {
             console.log("¡Superaste la cantidad máxima de calorías permitidas!");
         }
@@ -130,15 +134,15 @@ class Alimento {
     // Método para quitar el alimento de la cesta
     quitar() {
         const index = alimentosAñadidos.indexOf(this);
-    
+
         if (index !== -1) {
             alimentosAñadidos.splice(index, 1);
-    
+
             totalCalorias -= this.calorias * (this.cantidadGramos / 100);
             totalHidratos -= this.hidratos * (this.cantidadGramos / 100);
             totalProteinas -= this.proteinas * (this.cantidadGramos / 100);
             totalGrasas -= this.grasas * (this.cantidadGramos / 100);
-    
+
             actualizarTotales();
             actualizarCesta();
         }
@@ -146,77 +150,93 @@ class Alimento {
 
 }
 
-    // Función para actualizar los totales y mostrar en el contenedor
+// Función para actualizar los totales y mostrar en el contenedor
 function actualizarTotales() {
-        let porcentajeCal = totalCalorias / MAX_CALORIAS * 100;
-        // Mostrar totales en el contenedor
-        const calculosContainer = document.getElementById('calculosContainer');
-        const kcal = document.getElementById('kcal');
-        const hid = document.getElementById('hid');
-        const prot = document.getElementById('prot');
-        const gra = document.getElementById('gra');
+    let porcentajeCal = totalCalorias / MAX_CALORIAS * 100;
+    // Mostrar totales en el contenedor
+    const calculosContainer = document.getElementById('calculosContainer');
+    const kcal = document.getElementById('kcal');
+    const hid = document.getElementById('hid');
+    const prot = document.getElementById('prot');
+    const gra = document.getElementById('gra');
 
-        if (porcentajeCal < 100) {
-            setProgress(porcentajeCal);
-            kcal.innerHTML = `${Math.round(totalCalorias)} kcal `;
-            hid.innerHTML = `<strong>Hidratos: </strong>${totalHidratos.toFixed(2)} gr <div id="hid-progress" class="progress-value"></div>`;
-            prot.innerHTML = `<strong>Proteínas: </strong>${totalProteinas.toFixed(2)} gr <div id="prot-progress" class="progress-value"></div>`;
-            gra.innerHTML = `<strong>Grasas: </strong>${totalGrasas.toFixed(2)}  gr <div id="gra-progress" class="progress-value"></div>`;
-            updateProgressBar("hid-progress", totalHidratos);
-            updateProgressBar("prot-progress", totalProteinas);
-            updateProgressBar("gra-progress", totalGrasas);
-        }
+    if (porcentajeCal < 100) {
+        setProgress(porcentajeCal);
+        kcal.innerHTML = `${Math.round(totalCalorias)} kcal `;
+        hid.innerHTML = `<strong>Hidratos: </strong>${totalHidratos.toFixed(2)} gr <div id="hid-progress" class="progress-value"></div>`;
+        prot.innerHTML = `<strong>Proteínas: </strong>${totalProteinas.toFixed(2)} gr <div id="prot-progress" class="progress-value"></div>`;
+        gra.innerHTML = `<strong>Grasas: </strong>${totalGrasas.toFixed(2)}  gr <div id="gra-progress" class="progress-value"></div>`;
+        updateProgressBar("hid-progress", totalHidratos);
+        updateProgressBar("prot-progress", totalProteinas);
+        updateProgressBar("gra-progress", totalGrasas);
     }
-    //Función para actualizar la barra de progreso.
+}
+//Función para actualizar la barra de progreso.
 function updateProgressBar(progressBarId, value) {
-        var progressBar = document.getElementById(progressBarId);
-        if (!progressBar) {
-            console.error("Element with ID '" + progressBarId + "' not found.");
-            return;
-        }    
-        var newValue = Math.min(value, 100);
-        progressBar.style.width = newValue + "%";
+    var progressBar = document.getElementById(progressBarId);
+    if (!progressBar) {
+        console.error("Element with ID '" + progressBarId + "' not found.");
+        return;
     }
+    var newValue = Math.min(value, 100);
+    progressBar.style.width = newValue + "%";
+}
 
 // Crear instancias de la clase Alimento
 let alimentosData = [];
 
+
+var mensajee = document.getElementById("mensaje");
+var div = document.getElementById("divjefe");
+
 fetch('alimentos.php')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`Error de lectura del archivo: ${response.status} ${response.statusText}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    alimentosData = data;
-    alimentos = alimentosData.map(item => new Alimento(
-      item.nombre,
-      item.tipo,
-      item.calorias,
-      item.hidratos,
-      item.proteinas,
-      item.grasas
-    ));
-    alimentos.sort((a, b) => a.calorias - b.calorias);
-    // Agregar divs independientes para cada alimento
-    alimentos.forEach(alimento => {
-      const div = document.createElement('div');
-      div.className = 'alimento';
-      div.innerHTML = `
+    .then(response => {
+
+        mensajee.style.display = "block";
+        div.style.display= "none";
+        
+
+        if (!response.ok) {
+            throw new Error(`Error de lectura del archivo: ${response.status} ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        setTimeout(function redirigir() {
+
+            alimentosData = data;
+            alimentos = alimentosData.map(item => new Alimento(
+                item.nombre,
+                item.tipo,
+                item.calorias,
+                item.hidratos,
+                item.proteinas,
+                item.grasas
+            ));
+            alimentos.sort((a, b) => a.calorias - b.calorias);
+            // Agregar divs independientes para cada alimento
+            alimentos.forEach(alimento => {
+                const div = document.createElement('div');
+                div.className = 'alimento';
+                div.innerHTML = `
         <b>${alimento.nombre}</b><br>
         ${alimento.calorias}<br>Kcal
         <img src="./img/${alimento.nombre}.png" alt="${alimento.nombre}">
       `;
-      div.onclick = function () {
-        openModal(alimento);
-      };
-      alimentosContainer.appendChild(div);
+                div.onclick = function () {
+                    openModal(alimento);
+                };
+                alimentosContainer.appendChild(div);
+            });
+
+            mensajee.style.display = "none";
+            div.style.display= "block";
+        }, 2000);
+
+    })
+    .catch(error => {
+        console.error('Error de lectura del archivo:', error.message);
     });
-  })
-  .catch(error => {
-    console.error('Error de lectura del archivo:', error.message);
-  });
 
 
 // Función para abrir el modal con la información del alimento
@@ -241,14 +261,14 @@ function openModal(alimento) {
     `;
     modal.style.display = 'block';
 
-        // Asignar el evento onclick usando JavaScript
-        const addButton = document.getElementById('addButton');
-        addButton.onclick = function () {
-            const gramosInput = document.getElementById('gramosInput');
-            const cantidadGramos = gramosInput.value ? parseFloat(gramosInput.value) : 100; // Valor predeterminado a 100 gramos si no se ingresa nada
-            alimento.addAlimento(cantidadGramos);
+    // Asignar el evento onclick usando JavaScript
+    const addButton = document.getElementById('addButton');
+    addButton.onclick = function () {
+        const gramosInput = document.getElementById('gramosInput');
+        const cantidadGramos = gramosInput.value ? parseFloat(gramosInput.value) : 100; // Valor predeterminado a 100 gramos si no se ingresa nada
+        alimento.addAlimento(cantidadGramos);
 
-        };
+    };
 }
 
 // Función para cerrar el modal
@@ -276,8 +296,8 @@ circle.style.strokeDashoffset = circumference;
 
 // Actualizar el valor del círculo
 function setProgress(percent) {
-  const offset = circumference - (percent / 100) * circumference;
-  circle.style.strokeDashoffset = offset;
+    const offset = circumference - (percent / 100) * circumference;
+    circle.style.strokeDashoffset = offset;
 }
 
 // Función para recargar la página con el nuevo orden de alimentos
@@ -286,54 +306,54 @@ function recargarPagina() {
     const criterio = document.getElementById('ordenarSelect').value;
     const url = new URL(window.location.href);
     url.searchParams.set('orden', criterio);
-  
+
     // Recarga la página con la nueva URL
     window.location.href = url.href;
-  }
-  
-  // Función para ordenar los alimentos según el criterio seleccionado
-  function ordenarAlimentos() {
+}
+
+// Función para ordenar los alimentos según el criterio seleccionado
+function ordenarAlimentos() {
     const ordenarSelect = document.getElementById('ordenarSelect');
     const criterio = ordenarSelect.value;
-  
+
     if (criterio === 'alfabeto') {
-      alimentos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        alimentos.sort((a, b) => a.nombre.localeCompare(b.nombre));
     } else if (criterio === 'calorias') {
-      alimentos.sort((a, b) => a.calorias - b.calorias);
-    }else if (criterio === 'caloriasdecreciente') {
-      alimentos.sort((a, b) => b.calorias - a.calorias);
+        alimentos.sort((a, b) => a.calorias - b.calorias);
+    } else if (criterio === 'caloriasdecreciente') {
+        alimentos.sort((a, b) => b.calorias - a.calorias);
     }
-  
+
     // Limpiar el contenedor antes de agregar los alimentos ordenados
     alimentosContainer.innerHTML = '';
-  
+
     // Agregar divs independientes para cada alimento después de ordenar
     alimentos.forEach(alimento => {
-      const div = document.createElement('div');
-      div.className = 'alimento';
-      div.innerHTML = `
+        const div = document.createElement('div');
+        div.className = 'alimento';
+        div.innerHTML = `
         <b>${alimento.nombre}</b><br>
         ${alimento.calorias}<br>Kcal
         <img src="./img/${alimento.nombre}.png" alt="${alimento.nombre}">
       `;
-      div.onclick = function () {
-        openModal(alimento);
-      };
-      alimentosContainer.appendChild(div);
+        div.onclick = function () {
+            openModal(alimento);
+        };
+        alimentosContainer.appendChild(div);
     });
-  }
+}
 
-  // Verifica si hay un parámetro 'orden' en la URL al cargar la página
-  window.onload = function () {
+// Verifica si hay un parámetro 'orden' en la URL al cargar la página
+window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const ordenParam = urlParams.get('orden');
-  
+
     if (ordenParam) {
-      // Si hay un parámetro 'orden', selecciona la opción correspondiente en el menú desplegable y ordena los alimentos
-      document.getElementById('ordenarSelect').value = ordenParam;
-      ordenarAlimentos();
+        // Si hay un parámetro 'orden', selecciona la opción correspondiente en el menú desplegable y ordena los alimentos
+        document.getElementById('ordenarSelect').value = ordenParam;
+        ordenarAlimentos();
     }
-  };
+};
 
 // Función para quitar el alimento de la cesta
 function quitar(nombreAlimento) {
@@ -381,6 +401,7 @@ function actualizarCesta() {
 
 //función para añadir a Desayuno, Almuerzo, Snack o Cena
 function addMenu(seleccion) {
+
     const cestaContainer = document.getElementById('cesta');
     const selectedDiv = document.getElementById(seleccion);
 

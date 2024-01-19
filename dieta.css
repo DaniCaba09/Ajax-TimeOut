@@ -12,6 +12,10 @@ body{
     text-align: center;
 }
 
+#mensaje{
+    font-size: 30px;
+  }
+
 h1{
     margin-right: auto; 
     font-family: Laser;
@@ -64,7 +68,9 @@ ol{
     background-color: white;
     width: 50%;
     font-size: 15px;
-  } 
+  }
+
+  
 
 
 .alimentos-container {
@@ -260,7 +266,7 @@ ol{
 }
 .cestamsg{
     width: 30%;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: 5%;
 }
 
